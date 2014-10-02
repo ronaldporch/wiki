@@ -1,0 +1,10 @@
+<h2>Articles</h2>
+<ul>
+<% @articles.each do |a| %>
+  <li><%= link_to a.name, article_path(a) %></li>
+<% end %>
+</ul>
+
+<% unless current_user.nil? %>
+<%= link_to "New Article", new_article_path %>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="article_title"><h2><%= @article.name %></h2></div>
+<div class="article_content"><p><%= @article.content %></p></div>
+
+<p>Editors:</p>
+<ul>
+<% @article.users.length.times do |u| %>
+  <li><%= link_to @article.users[u].email, user_path(@article.users[u]) %></li>
+<% end %>
+</ul>
+
+<% unless current_user.nil? %>
+<%= link_to "Edit", edit_article_path(@article), class: "button" %><%= link_to "Delete", article_path(@article), method: "delete", data: {confirm: "Are you sure?"}, class: "button" %>
+<% end %>
