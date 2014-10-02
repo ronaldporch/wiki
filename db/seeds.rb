@@ -8,7 +8,7 @@
 
 user = []
 25.times do |n|
-  user[n] = User.create(email: Faker::Internet.email, password: "password", encrypted_password: User.new.send(:password_digest, 'password'))
+  user[n] = User.create(email: Faker::Internet.email, password: 'password', encrypted_password: User.new.send(:password_digest, 'password'))
 end
 
 50.times do
