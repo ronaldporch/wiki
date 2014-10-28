@@ -1,0 +1,8 @@
+<h2><%= @user.email %></h2>
+
+Articles:
+<ul>
+<% @user.articles.length.times do |u| %>
+  <li><%= link_to @user.articles[u].name, article_path(@user.articles[u]) %></li>
+<% end %>
+</ul>
